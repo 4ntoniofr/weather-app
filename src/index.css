@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 
+body {
+  font-family: "Quicksand";
+  /*background-color: rgb(255, 255, 255);*/
+  background-image: url("https://images.unsplash.com/photo-1610889282378-76d4c8440b90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d2hpdGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .main {
   display: flex;
   position: absolute;
@@ -7,10 +14,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-  /*background-color: rgb(255, 255, 255);*/
-  /* background-image: url("https://images.unsplash.com/photo-1610889282378-76d4c8440b90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d2hpdGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80");
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .leftDiv {
@@ -21,16 +24,16 @@
 }
 
 .rightDiv {
-  height: 100%;
   width: 35%;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .mainInfo {
   display: flex;
   align-items: center;
-  font-family: "Quicksand";
-  color: #555;
+  color: rgb(66, 66, 66);
   position: absolute;
   bottom: 50px;
   flex-wrap: wrap;
@@ -104,11 +107,11 @@
     width: 100%;
   }
 
-  .mainInfo .temp{
+  .mainInfo .temp {
     font-size: 600%;
   }
 
-  .mainInfo .cityDate{
+  .mainInfo .cityDate {
     font-size: 100%;
     margin-left: 20px;
   }
@@ -120,5 +123,4 @@
     width: 20%;
     margin-right: 15px;
   }
-  
 }

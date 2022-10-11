@@ -1,6 +1,8 @@
 import { useState } from "react";
 import MainInfo from "./components/MainInfo";
 import weatherServices from "./services/weatherServices";
+import CityForm from "./components/CityForm";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [nombre, setNombre] = useState("");
@@ -8,6 +10,7 @@ function App() {
   const [temp, setTemp] = useState(null);
   const [city, setCity] = useState("");
   const [date, setDate] = useState("");
+  const [forecast, setForecast] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -17,10 +20,12 @@ function App() {
     const dateResponse = await weatherServices.getLocalDate(
       response.data.data[0].timezone
     );
+    const forecastResponse = await weatherServices.getForecast(nombre);
     setIcon(response.data.data[0].weather.icon);
     setTemp(response.data.data[0].temp);
     setCity(response.data.data[0].city_name);
     setDate(dateResponse.data.datetime);
+    setForecast(forecastResponse.data.data);
     setLoading(false);
   };
 
@@ -38,17 +43,12 @@ function App() {
     <div className="main">
       <div className="leftDiv">{loadingOrNot()}</div>
       <div className="rightDiv">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Ciudad
-            <input
-              type={"text"}
-              value={nombre}
-              onChange={(event) => setNombre(event.target.value)}
-            ></input>
-          </label>
-          <button type="submit">Dale</button>
-        </form>
+        <CityForm
+          nombre={nombre}
+          setNombre={setNombre}
+          handleSubmit={handleSubmit}
+        ></CityForm>
+        <Forecast data={forecast}></Forecast>
       </div>
     </div>
   );

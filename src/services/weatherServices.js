@@ -17,12 +17,25 @@ const getCurrentWeather = async (name) => {
     headers: {
       "X-RapidAPI-Key": "d8f25ea3f5msh6d7b0e05537ca22p159631jsnf171b209a4e3",
       "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
-      lang: "es",
     },
   };
 
   return await axios.request(options);
 };
 
-const weatherServices = { getLocalDate, getCurrentWeather };
+const getForecast = async (name) => {
+  const options = {
+    method: "GET",
+    url: "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily",
+    params: { city: name },
+    headers: {
+      "X-RapidAPI-Key": "d8f25ea3f5msh6d7b0e05537ca22p159631jsnf171b209a4e3",
+      "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+    },
+  };
+
+  return await axios.request(options);
+};
+
+const weatherServices = { getLocalDate, getCurrentWeather, getForecast };
 export default weatherServices;

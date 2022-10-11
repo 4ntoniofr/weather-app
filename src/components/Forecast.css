@@ -1,0 +1,60 @@
+.forecast {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dayChart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid white;
+  border-radius: 30px;
+  margin: 15px 10px;
+  width: 100%;
+}
+
+.dayChart .data {
+  display: none;
+}
+
+.dayChart .info {
+  display: none;
+}
+
+.dayChart:hover .info {
+  display: initial;
+}
+
+.dayChart:hover .data {
+  display: flex;
+}
+
+.dayChart .date {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: larger;
+  margin: 8px 0;
+}
+
+.dayChart .icon {
+  height: 90px;
+  width: 90px;
+}
+
+.dayChart p {
+  color: white;
+}
+
+.dayChart i {
+  margin-right: 10px;
+}
+
+.dayChart .flecha {
+  font-size: 20px;
+}
+
+.dayChart .wi-wind {
+  font-size: 25px;
+}
