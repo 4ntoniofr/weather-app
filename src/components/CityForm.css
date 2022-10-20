@@ -6,15 +6,13 @@
   margin-bottom: 30px;
 }
 
-.cityForm .inputSection{
+.cityForm .inputSection {
   display: flex;
   justify-content: center;
 }
 
 .cityForm label {
   margin: 0;
-  position: relative;
-  right: 220px;
   font-size: large;
   font-weight: bolder;
   -webkit-transition: 0.5s;
@@ -26,9 +24,7 @@
 }
 
 .cityForm input {
-  position: relative;
-  left: 50px;
-  margin-left: 10px;
+  margin-right: 10px;
   background-color: transparent;
   padding-left: 5px;
   color: rgb(218, 218, 218);

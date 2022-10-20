@@ -10,7 +10,7 @@ export default function Forecast({ data }) {
     4: "Thursday",
     5: "Friday",
     6: "Saturday",
-    7: "Sunday",
+    0: "Sunday",
   };
 
   const dayChart = (day, id) => {
