@@ -1,4 +1,5 @@
 import "./CityForm.css";
+// Search form structure
 export default function cityform({ nombre, setNombre, handleSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="cityForm">
